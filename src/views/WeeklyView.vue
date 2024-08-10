@@ -1,5 +1,5 @@
 <template>
-    <TimeframeDisplay :timeframes="timeframes" timeframe="weekly" />
+  <TimeframeDisplay :timeframes="timeframes" timeframe="weekly" />
 </template>
 
 <script lang="ts">
@@ -8,18 +8,14 @@ import { timeframes } from '../assets/timeframes';
 import TimeframeDisplay from '../components/TimeframeDisplay.vue';
 
 export default defineComponent({
-  name: 'WeeklyView',
-  components: {
-    TimeframeDisplay
-  },
-  data() {
-    return {
-      timeframes
-    };
-  }
+name: 'WeeklyView',
+components: {
+  TimeframeDisplay
+},
+data() {
+  return {
+    timeframes
+  };
+}
 });
 </script>
-
-<style scoped>
-/* Your styles here */
-</style>

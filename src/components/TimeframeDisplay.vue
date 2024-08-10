@@ -1,14 +1,13 @@
 <template>
     <div class="card-container">
-      <div class="wrapper icon" v-for="(item, index) in timeframes" :key="index" :class="getWrapperClass(item.title)">
+      <div class="icon" v-for="(item, index) in timeframes" :key="index" :class="getWrapperClass(item.title)">
         <div class="card">
-            <div v-if="item.timeframes[timeframe].current > 0">
-            <p class="title">{{ item.title }}</p>
-            <p class="current">{{ item.timeframes[timeframe].current }} Completed</p>
-            <p class="previous">Last week: {{ item.timeframes[timeframe].previous }} Completed</p>
-            </div>
-            <div v-else>
-            <p class="no-data title">Sorry - no data available for {{ item.title }}</p>
+            <div>
+              <p class="title"><span>{{ item.title }}</span><span>&bullet;&bullet;&bullet;</span></p>
+              <p class="tf">
+                <span class="current"><span>{{ item.timeframes[timeframe].current }}</span><span>Completed</span></span>
+                <span class="previous">Last week: {{ item.timeframes[timeframe].previous }} <span class="completed">Completed</span></span>
+              </p>
             </div>
         </div>
         
@@ -38,7 +37,3 @@
   }
   });
   </script>
-  
-  <style scoped>
-  
-  </style>
